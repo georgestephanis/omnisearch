@@ -3,7 +3,7 @@
 // Include this here so that other plugins can extend it if they like.
 require_once( dirname(__FILE__) . '/omnisearch-posts.php' );
 
-class Jetpack_Omnisearch {
+class WP_Omnisearch {
 	static $instance;
 	static $num_results = 5;
 
@@ -20,20 +20,20 @@ class Jetpack_Omnisearch {
 
 	static function add_providers() {
 		// omnisearch-posts.php is included above, so that other plugins can more easily extend it.
-		new Jetpack_Omnisearch_Posts;
-		new Jetpack_Omnisearch_Posts( 'page' );
+		new WP_Omnisearch_Posts;
+		new WP_Omnisearch_Posts( 'page' );
 
 		require_once( dirname(__FILE__) . '/omnisearch-comments.php' );
-		new Jetpack_Omnisearch_Comments;
+		new WP_Omnisearch_Comments;
 
 		if ( current_user_can( 'upload_files' ) ) {
 			require_once( dirname(__FILE__) . '/omnisearch-media.php' );
-			new Jetpack_Omnisearch_Media;
+			new WP_Omnisearch_Media;
 		}
 
 		if ( current_user_can( 'install_plugins' ) ) {
 			require_once( dirname(__FILE__) . '/omnisearch-plugins.php' );
-			new Jetpack_Omnisearch_Plugins;
+			new WP_Omnisearch_Plugins;
 		}
 
 		do_action( 'omnisearch_add_providers' );
@@ -168,5 +168,5 @@ class Jetpack_Omnisearch {
 	}
 
 }
-new Jetpack_Omnisearch;
+new WP_Omnisearch;
 

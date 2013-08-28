@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Jetpack Omnisearch
+Plugin Name: Omnisearch
 Plugin URI: https://github.com/georgestephanis/omnisearch
 Description: Enables an Omnisearch in WordPress.
 Author: George Stephanis

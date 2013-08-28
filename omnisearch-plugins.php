@@ -3,7 +3,7 @@
 if( ! class_exists( 'WP_Plugin_Install_List_Table' ) )
 	require_once( ABSPATH . 'wp-admin/includes/class-wp-plugin-install-list-table.php' );
 
-class Jetpack_Omnisearch_Plugins extends WP_Plugin_Install_List_Table {
+class WP_Omnisearch_Plugins extends WP_Plugin_Install_List_Table {
 	static $instance;
 
 	function __construct() {
